@@ -62,12 +62,12 @@ ios/DerivedData/
 *.xcworkspace/xcuserdata/
 
 # Android
-android/app/build/
-android/build/
-android/.gradle/
-android/captures/
-android/gradlew.bat
-android/local.properties
+app/android/app/build/
+app/android/build/
+app/android/.gradle/
+app/android/captures/
+app/android/gradlew.bat
+app/android/local.properties
 *.keystore
 
 # Flipper

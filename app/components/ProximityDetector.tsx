@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
-import { subscribe, initBleLoop } from '../services/bleService';
+import {
+  subscribe,
+  initBleLoop,
+  isBleAvailable,
+  getBleInitError,
+} from "../services/bleService";
 import { getAuthToken, getPairedWith } from '../utils/deviceManager';
 import { sendDetection } from '../services/apiService';
 
 export default function ProximityDetector() {
   const [lastEvent, setLastEvent] = useState<string>('Waiting for detection...');
+  const bleReady = isBleAvailable();
+  const bleError = getBleInitError();
 
   useEffect(() => {
     initBleLoop();
@@ -24,7 +31,14 @@ export default function ProximityDetector() {
 
   return (
     <View>
-      <Text style={{ marginBottom: 8 }}>Proximity detector active.</Text>
+      <Text style={{ marginBottom: 8 }}>
+        Proximity detector active. BLE available: {bleReady ? "yes" : "no"}
+      </Text>
+      {!bleReady && bleError && (
+        <Text style={{ color: "red", marginBottom: 8 }}>
+          BLE error: {bleError}
+        </Text>
+      )}
       <Text>{lastEvent}</Text>
     </View>
   );

@@ -7,18 +7,25 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "prebuild": "expo prebuild",
+    "android:devclient": "expo run:android --variant developmentDebug",
+    "ios:devclient": "expo run:ios --configuration Debug",
+    "clean": "rm -rf node_modules .expo && npm install",
+    "doctor": "expo doctor"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.22.0",
+    "@react-native-async-storage/async-storage": "1.23.1",
     "@types/react": "~18.2.79",
     "expo": "^51.0.0",
-    "expo-crypto": "^12.0.0",
-    "react": "^18.2.0",
-    "react-native": "^0.74.0",
+    "expo-crypto": "~13.0.2",
+    "expo-dev-client": "~4.0.29",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
     "react-native-ble-plx": "^2.0.3"
   },
   "devDependencies": {
-    "typescript": "^5.4.5"
+    "@types/node": "^24.8.1",
+    "typescript": "~5.3.3"
   }
 }

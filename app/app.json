@@ -10,6 +10,11 @@
     ],
     "android": {
       "package": "com.anonymous.reminderappmobile"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "eb3c2754-fe63-4b4b-a5c2-1f7949be47f5"
+      }
     }
   }
 }
