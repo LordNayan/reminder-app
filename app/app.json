@@ -4,12 +4,30 @@
     "slug": "reminder-app-mobile",
     "version": "0.1.0",
     "sdkVersion": "51.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "android": {
-      "package": "com.anonymous.reminderappmobile"
+      "package": "com.anonymous.reminderappmobile",
+      "permissions": [
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "BLUETOOTH_CONNECT",
+        "BLUETOOTH_SCAN",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.reminderappmobile",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Detect nearby paired device to send reminders",
+        "NSBluetoothPeripheralUsageDescription": "Detect nearby paired device to send reminders",
+        "NSLocationWhenInUseUsageDescription": "Needed to scan for nearby device via BLE"
+      }
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#121212",
+      "resizeMode": "contain"
     },
     "extra": {
       "eas": {

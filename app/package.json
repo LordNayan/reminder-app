@@ -14,6 +14,9 @@
     "clean": "rm -rf node_modules .expo && npm install",
     "doctor": "expo doctor"
   },
+  "eas": {
+    "projectId": "eb3c2754-fe63-4b4b-a5c2-1f7949be47f5"
+  },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.23.1",
     "@types/react": "~18.2.79",

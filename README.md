@@ -51,6 +51,24 @@ npm start
 ```
 3. Provide env var `EXPO_PUBLIC_API_BASE` if backend not on default.
 
+### Using a Development Client (BLE support)
+Expo Go does not include the native BLE module. Build a development client:
+
+Local (Android/iOS):
+```
+cd app
+npm run android    # or npm run ios
+```
+Cloud (EAS dev build):
+```
+cd app
+eas build --profile dev --platform android
+eas build --profile dev --platform ios
+```
+After installation, open the client and run `npm start` (or use QR) to load JS with BLE available.
+
+If you see `react-native-ble-plx not available`, ensure you are in dev client (not Expo Go) and permissions are in `app.json`.
+
 ## API Endpoints
 
 - `POST /api/pair` Body: `{ deviceId, phoneNumber, targetDeviceId? }` -> `{ token, deviceId, pairedWith }`
